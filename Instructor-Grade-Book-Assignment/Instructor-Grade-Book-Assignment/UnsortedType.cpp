@@ -47,13 +47,13 @@ void UnsortedType<Type>::MakeEmpty()
 }
 
 template <class Type>
-void UnsortedType<Type>::PutStudent(ItemType item)
+void UnsortedType<Type>::PutStudent(StudentType student)
 // item is in the list; length has been incremented.
 {
 	NodeType<Type>* location;			// Declare a pointer to a node
 
 	location = new NodeType;		// Get a new node 
-	location->info = item;		// Store the item in the node
+	location->info = student;		// Store the item in the node
 	location->next = listData;	// Store address of first node 
 								//   in next field of new node
 	listData = location;		// Store address of new node into
@@ -62,7 +62,7 @@ void UnsortedType<Type>::PutStudent(ItemType item)
 }
 
 template <class Type>
-ItemType UnsortedType<Type>::GetItem(ItemType& item, bool& found)
+StudentType UnsortedType<Type>::GetStudent(StudentType& student, bool& found)
 // Pre:  Key member(s) of item is initialized.
 // Post: If found, item's key matches an element's key in the 
 //       list and a copy of that element has been stored in item;
@@ -77,14 +77,14 @@ ItemType UnsortedType<Type>::GetItem(ItemType& item, bool& found)
 
 	while (moreToSearch && !found)
 	{
-		switch (item.ComparedTo(location->info))
+		switch (student.ComparedTo(location->info))
 		{
 		case LESS:
 		case GREATER: location = location->next;
 			moreToSearch = (location != NULL);
 			break;
 		case EQUAL: found = true;
-			item = location->info;
+			student = location->info;
 			break;
 		}
 	}
@@ -92,7 +92,7 @@ ItemType UnsortedType<Type>::GetItem(ItemType& item, bool& found)
 }
 
 template <class Type>
-void UnsortedType<Type>::DeleteItem(ItemType item)
+void UnsortedType<Type>::DeleteStudent(StudentType student)
 // Pre:  item's key has been initialized.
 //       An element in the list has a key that matches item's.
 // Post: No element in the list has a key that matches item's.
@@ -127,18 +127,18 @@ void UnsortedType<Type>::ResetList()
 }
 
 template <class Type>
-ItemType UnsortedType<Type>::GetNextItem()
+StudentType UnsortedType<Type>::GetNextStudent()
 // Post:  A copy of the next item in the list is returned.
 //        When the end of the list is reached, currentPos
 //        is reset to begin again.
 {
-	ItemType item;
+	StudentType student;
 	if (currentPos == NULL)
 		currentPos = listData;
 	else
 		currentPos = currentPos->next;
-	item = currentPos->info;
-	return item;
+	student = currentPos->info;
+	return student;
 }
 template <class Type>
 UnsortedType<Type>::~UnsortedType()

@@ -21,9 +21,15 @@
     <ClCompile Include="UnsortedType.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="StudentType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UnsortedType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
