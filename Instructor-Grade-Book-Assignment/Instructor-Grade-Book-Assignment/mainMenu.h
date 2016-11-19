@@ -8,7 +8,6 @@ using namespace std;
 class mainMenu
 {
 public:
-
 	void print();
 };
 #endif 
