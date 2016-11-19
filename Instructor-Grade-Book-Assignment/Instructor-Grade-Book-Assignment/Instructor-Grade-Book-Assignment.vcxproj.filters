@@ -18,18 +18,21 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UnsortedType.cpp">
+    <ClCompile Include="StudentType.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StudentType.cpp">
+    <ClCompile Include="mainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="UnsortedType.h">
+    <ClInclude Include="StudentType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StudentType.h">
+    <ClInclude Include="unsortedType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
