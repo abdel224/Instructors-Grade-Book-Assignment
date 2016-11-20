@@ -12,7 +12,7 @@ public:
 	void OpenInputFile();
 	void OpenOutputFile();
 	void OpenLogFile();
-	void fileNotCreated();
+
 
 private:
 	ifstream inputFile;

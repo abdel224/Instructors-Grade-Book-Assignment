@@ -1,4 +1,6 @@
 #pragma once
+#ifndef H_semester
+#define H_semester
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -36,4 +38,5 @@ private:
 	int numFinalExams;
 	int weightPercentFinalExams;
 };
+#endif
 
