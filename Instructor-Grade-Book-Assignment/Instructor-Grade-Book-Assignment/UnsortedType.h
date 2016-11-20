@@ -1,7 +1,6 @@
 #pragma once
 #ifndef H_unsortedType
 #define H_unsortedType
-
 #include <iostream>
 #include <cassert>
 
@@ -102,24 +101,23 @@ inline int UnsortedType<Type>::GetLength() const
 template<typename Type>
 inline Type UnsortedType<Type>::GetItem(Type& item, bool& found)
 {
-	bool moreToSearch;
+	
 	NodeType<Type>* location;
 
 	location = listData;
 	found = false;
-	moreToSearch = (location != NULL);
 
-	while (moreToSearch && !found)
+	while (location != NULL && !found)
 	{
-		switch (item.ComparedTo(location->info))
+		if (item == location->info)
 		{
-		case LESS:
-		case GREATER: location = location->next;
-			moreToSearch = (location != NULL);
-			break;
-		case EQUAL: found = true;
+			found = true;
 			item = location->info;
 			break;
+		}
+		else
+		{
+			location = location->next;
 		}
 	}
 	return item;
@@ -143,25 +141,40 @@ template<typename Type>
 inline void UnsortedType<Type>::DeleteItem(Type item)
 {
 	NodeType<Type>* location = listData;
-	NodeType<Type>* tempLocation;
+	NodeType<Type>* tempLocation = NULL;
+	NodeType<Type>* tempLocation2 = NULL;
+
+	while (location != NULL)
+	{
+		if (item == location->info)
+		{
+			tempLocation = location;
+			break;
+		}
+		else
+		{
+			tempLocation2 = location;
+			location = location->next;
+		}
+	}
 
 	// Locate node to be deleted.
-	if (item.ComparedTo(listData->info) == EQUAL)
+	if (tempLocation != NULL)
 	{
-		tempLocation = location;
-		listData = listData->next;		// Delete first node.
+		if (tempLocation2 == NULL)
+		{
+			listData = location->next;
+			delete tempLocation;
+			length--;
+		}
+		else
+		{
+			tempLocation2->next = location->next;
+			delete tempLocation;
+			length--;
+		}
 	}
-	else
-	{
-		while (item.ComparedTo((location->next)->info) != EQUAL)
-			location = location->next;
 
-		// Delete node at location->next
-		tempLocation = location->next;
-		location->next = (location->next)->next;
-	}
-	delete tempLocation;
-	length--;
 }
 
 template<typename Type>
