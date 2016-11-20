@@ -13,15 +13,6 @@ int main() {
 	char answer = ' ';
 
 	do {
-		if (semesterSet.fileExists() == true)
-		{
-			cout << "Semester is set dont press S!!!" << endl;
-		}
-		else
-		{
-			cout << "Semester isn't set yet do this First!" << endl;
-		}
-
 		menu.print();
 		cin >> answer;
 		system("cls");
@@ -35,6 +26,14 @@ int main() {
 		}
 		else if (toupper(answer) == 'A')
 		{
+			if (semesterSet.fileExists() == false)
+			{
+				cout << "Semester isn't set yet do this First!" << endl;
+				system("pause");
+				system("cls");
+				main();
+			}
+
 			cout << "Add student.";
 			cout << endl;
 			system("pause");
@@ -42,6 +41,13 @@ int main() {
 		}
 		else if (toupper(answer) == 'P')
 		{
+			if (semesterSet.fileExists() == false)
+			{
+				cout << "Semester isn't set yet do this First!" << endl;
+				system("pause");
+				system("cls");
+				main();
+			}
 			cout << "Add program grades";
 			cout << endl;
 			system("pause");
@@ -49,6 +55,13 @@ int main() {
 		}
 		else if (toupper(answer) == 'T')
 		{
+			if (semesterSet.fileExists() == false)
+			{
+				cout << "Semester isn't set yet do this First!" << endl;
+				system("pause");
+				system("cls");
+				main();
+			}
 			cout << "Add test grades";
 			cout << endl;
 			system("pause");
@@ -56,6 +69,13 @@ int main() {
 		}
 		else if (toupper(answer) == 'F')
 		{
+			if (semesterSet.fileExists() == false)
+			{
+				cout << "Semester isn't set yet do this First!" << endl;
+				system("pause");
+				system("cls");
+				main();
+			}
 			cout << "Add final test grades";
 			cout << endl;
 			system("pause");
@@ -63,6 +83,13 @@ int main() {
 		}
 		else if (toupper(answer) == 'C')
 		{
+			if (semesterSet.fileExists() == false)
+			{
+				cout << "Semester isn't set yet do this First!" << endl;
+				system("pause");
+				system("cls");
+				main();
+			}
 			cout << "Change a grade for a particular student.";
 			cout << endl;
 			system("pause");
@@ -70,6 +97,13 @@ int main() {
 		}
 		else if (toupper(answer) == 'G')
 		{
+			if (semesterSet.fileExists() == false)
+			{
+				cout << "Semester isn't set yet do this First!" << endl;
+				system("pause");
+				system("cls");
+				main();
+			}
 			cout << "Calculate final grade";
 			cout << endl;
 			system("pause");
@@ -77,6 +111,13 @@ int main() {
 		}
 		else if (toupper(answer) == 'O')
 		{
+			if (semesterSet.fileExists() == false)
+			{
+				cout << "Semester isn't set yet do this First!" << endl;
+				system("pause");
+				system("cls");
+				main();
+			}
 			cout << "Output the grade data";
 			cout << endl;
 			system("pause");
