@@ -159,6 +159,9 @@
     <ClInclude Include="StudentType.h" />
     <ClInclude Include="unsortedType.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="SemesterInfo.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
