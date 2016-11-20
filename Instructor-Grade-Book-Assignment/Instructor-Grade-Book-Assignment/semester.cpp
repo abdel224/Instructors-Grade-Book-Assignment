@@ -134,6 +134,7 @@ void semester::printToFile() const
 		semesterFile << " " << endl;
 
 	}
+	semesterFile.close();
 }
 
 bool semester::fileExists()

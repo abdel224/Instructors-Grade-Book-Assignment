@@ -10,6 +10,7 @@ using namespace std;
 int main() {
 	mainMenu menu;
 	semester semesterSet;
+	ofstream logFile;
 	char answer = ' ';
 
 	do {
@@ -19,10 +20,25 @@ int main() {
 
 		if (toupper(answer) == 'S')
 		{
-			semesterSet.fillSemester();
-			cout << endl;
-			system("pause");
-			system("cls");
+			char option;
+			if (semesterSet.fileExists() == true)
+			{
+				cout << "Semester is created information will be overwrited are you sure?(Y/N)" << endl;
+			}
+			cin >> option;
+			if (toupper(option) == 'N')
+			{
+				system("cls");
+				main();
+			}
+			else
+			{
+				semesterSet.fillSemester();
+				cout << endl;
+				system("pause");
+				system("cls");
+			}
+
 		}
 		else if (toupper(answer) == 'A')
 		{
@@ -33,11 +49,14 @@ int main() {
 				system("cls");
 				main();
 			}
-
-			cout << "Add student.";
-			cout << endl;
-			system("pause");
-			system("cls");
+			else
+			{
+				cout << "Add student.";
+				cout << endl;
+				system("pause");
+				system("cls");
+			}
+	
 		}
 		else if (toupper(answer) == 'P')
 		{
@@ -62,10 +81,14 @@ int main() {
 				system("cls");
 				main();
 			}
-			cout << "Add test grades";
-			cout << endl;
-			system("pause");
-			system("cls");
+			else
+			{
+				cout << "Add test grades";
+				cout << endl;
+				system("pause");
+				system("cls");
+			}
+
 		}
 		else if (toupper(answer) == 'F')
 		{
@@ -76,24 +99,33 @@ int main() {
 				system("cls");
 				main();
 			}
-			cout << "Add final test grades";
-			cout << endl;
-			system("pause");
-			system("cls");
+			else
+			{
+				cout << "Add final test grades";
+				cout << endl;
+				system("pause");
+				system("cls");
+			}
+
 		}
 		else if (toupper(answer) == 'C')
 		{
 			if (semesterSet.fileExists() == false)
+
 			{
 				cout << "Semester isn't set yet do this First!" << endl;
 				system("pause");
 				system("cls");
 				main();
 			}
-			cout << "Change a grade for a particular student.";
-			cout << endl;
-			system("pause");
-			system("cls");
+			else
+			{
+				cout << "Change a grade for a particular student.";
+				cout << endl;
+				system("pause");
+				system("cls");
+			}
+
 		}
 		else if (toupper(answer) == 'G')
 		{
@@ -104,10 +136,14 @@ int main() {
 				system("cls");
 				main();
 			}
-			cout << "Calculate final grade";
-			cout << endl;
-			system("pause");
-			system("cls");
+			else
+			{
+				cout << "Calculate final grade";
+				cout << endl;
+				system("pause");
+				system("cls");
+			}
+
 		}
 		else if (toupper(answer) == 'O')
 		{
@@ -118,10 +154,14 @@ int main() {
 				system("cls");
 				main();
 			}
-			cout << "Output the grade data";
-			cout << endl;
-			system("pause");
-			system("cls");
+			else
+			{
+				cout << "Output the grade data";
+				cout << endl;
+				system("pause");
+				system("cls");
+			}
+
 		}
 		else if (toupper(answer) == 'Q')
 		{
