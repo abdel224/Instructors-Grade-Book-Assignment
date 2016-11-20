@@ -3,15 +3,24 @@
 #include <fstream>
 #include <iomanip>
 #include "mainMenu.h"
-#include "unsortedType.h"
+#include "semester.h"
 
 using namespace std;
 
 int main() {
 	mainMenu menu;
+	semester semesterSet;
 	char answer = ' ';
 
 	do {
+		if (semesterSet.fileExists() == true)
+		{
+			cout << "Semester is set dont press S!!!" << endl;
+		}
+		else
+		{
+			cout << "Semester isn't set yet do this First!" << endl;
+		}
 
 		menu.print();
 		cin >> answer;
@@ -19,7 +28,7 @@ int main() {
 
 		if (toupper(answer) == 'S')
 		{
-			cout << "Set Semester.";
+			semesterSet.fillSemester();
 			cout << endl;
 			system("pause");
 			system("cls");

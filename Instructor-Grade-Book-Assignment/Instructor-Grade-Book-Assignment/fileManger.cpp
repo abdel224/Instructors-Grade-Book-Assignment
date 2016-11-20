@@ -23,5 +23,5 @@ void fileManger::OpenOutputFile()
 
 void fileManger::OpenLogFile()
 {
-	outputFile.open("grades.log");
+	logFile.open("grades.log");
 }
