@@ -1,10 +1,7 @@
 #include "unsortedType.h"
 #include <iostream>
 #include <string>
-//#include "PersonType.h"
 using namespace std;
-
-template <class ItemType>
 
 
 class StudentType
@@ -16,7 +13,6 @@ public:
 	string GetStatus() const;
 	void Initialize(string, string, int, string);
 	void PersoneType(string, string, int);
-	ItemType Student();
 
 
 

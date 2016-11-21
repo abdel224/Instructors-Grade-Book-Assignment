@@ -4,40 +4,38 @@
 using namespace std;
 
 
-template<class ItemType>
-StudentType<ItemType>::StudentType()
+
+StudentType::StudentType()
 {
+	name = "";
+	lastName = "";
+	number = 0;
 }
 
 
-template<class ItemType>
-StudentType<ItemType>::~StudentType()
-{
-}
 
-template<class ItemType>
-string StudentType<ItemType>::GetStatus() const
+string StudentType::GetStatus() const
 {
 	return status;
 }
 
-template<class ItemType>
-void StudentType<ItemType>::Initialize(string newName, string newLastNmae, int newNumber, string newStatus)
+
+void StudentType::Initialize(string newName, string newLastNmae, int newNumber, string newStatus)
 {
 	status = newStatus;
-	StudentType::Initialize(newName, newLastName, newNumber);
+	//PersoneType::Initialize(newName, newLastName, newNumber);
 }
 
-template<class ItemType>
-void StudentType<ItemType>::PersoneType(string, string, int)
+
+void StudentType::PersoneType(string, string, int)
 {
 
 }
 
-
-template<class ItemType>
-ItemType StudentType<ItemType>::Student()
+StudentType::~StudentType()
 {
-	return ItemType();
 }
+
+
+
 
