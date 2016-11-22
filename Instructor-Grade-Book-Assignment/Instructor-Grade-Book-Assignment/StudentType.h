@@ -25,19 +25,19 @@ public:
 
 
 private:
+	
+	int number;
+	int studentCount = 0;
 	string status;
 	string name;
 	string lastName;
-	int number;
-	int studentCount = 0;
-
 	int totalProgramPercent;
 	int totalExamPercent;
 	int finalExamPercent;
 
-	int numPrograms;
-	int numExams;
-	int numFinalExam;
+	int numPrograms = 0;
+	int numExams = 0;
+	int numFinalExam = 0;
 
 
 };

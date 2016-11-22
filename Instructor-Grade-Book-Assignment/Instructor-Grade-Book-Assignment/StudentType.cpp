@@ -38,7 +38,28 @@ void StudentType::readFile()
 
 void StudentType::pritnToFile()
 {
+	studentCount++;
+	string arrayName[20];
+	string arrayLastName[20];
+	int arrayID [4];
 
+	string *arrayName = new (nothrow) string[20];
+	string * arrayLastName = new (nothrow) string[20];
+	int *arrayID = new (nothrow) int[4];
+
+	
+		arrayName[studentCount] = name;
+		arrayLastName[studentCount] = lastName;
+		arrayID[studentCount] = number;
+
+	
+
+	int i;
+
+	for (i = 0; i < studentCount; i++)
+	{
+		
+	}
 }
 
 void StudentType::setStudent()
@@ -59,8 +80,11 @@ void StudentType::setStudent()
 
 	//else if num de estudiante esta mostrar mensaje
 
+	//arrayName = new (nothrow) string [20];
+	//arrayLastName = new (nothrow) string[20];
+	//arrayID = new (nothrow) int[20];
 
-
+	pritnToFile();
 }
 
 void StudentType::setGrade()

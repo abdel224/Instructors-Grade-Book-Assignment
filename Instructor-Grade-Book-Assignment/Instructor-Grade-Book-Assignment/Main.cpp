@@ -4,6 +4,7 @@
 #include <iomanip>
 #include "mainMenu.h"
 #include "semester.h"
+#include "StudentType.h"
 
 using namespace std;
 
@@ -53,8 +54,11 @@ int main() {
 			{
 				cout << "Add student.";
 				cout << endl;
+				StudentType addStudent;
+				addStudent.setStudent();
 				system("pause");
 				system("cls");
+
 			}
 	
 		}
