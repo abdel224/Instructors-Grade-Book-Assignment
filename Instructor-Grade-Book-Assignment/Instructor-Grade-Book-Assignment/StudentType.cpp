@@ -11,21 +11,11 @@ StudentType::StudentType()
 	lastName = "";
 	ID = 0;
 	studentCount = 0;
+	startName = NULL;
+	startLast = NULL;
+	startID = NULL;
 }
 
-
-
-string StudentType::GetStatus() const
-{
-	return status;
-}
-
-
-void StudentType::Initialize(string newName, string newLastNmae, int newNumber, string newStatus)
-{
-	status = newStatus;
-	
-}
 
 
 void StudentType::PersoneType(string, string, int)
@@ -38,9 +28,9 @@ bool StudentType::IsFull() const
 	return false;
 }
 
-int StudentType::GetLength() const
+int StudentType::GetNumStudent() const
 {
-	return 0;
+	return studentCount;
 }
 
 void StudentType::readFile()
@@ -49,20 +39,44 @@ void StudentType::readFile()
 
 void StudentType::pritnToFile()
 {
-	
+	StudentName* tempName = startName;
+	StudentLastName* tempLast = startLast;
+	StudentID* tempID = startID;
+
+	while (tempName != NULL && tempLast != NULL && tempID != NULL)
+	{
+		cout << tempName->dataName << " " << tempLast->dataLast << " " << tempID->dataID << " " << endl;
+		tempName = tempName->next;
+		tempLast = tempLast->next;
+		tempID = tempID->next;
+	}
 }
 
 void StudentType::setStudent()
 {
-	//Keep the total of students
-	studentCount++;
-
 	cout << "Enter the Student Last Name:" << endl;
 	cin >> lastName;
 	cout << "Enter the Student First Name:" << endl;
 	cin >> name;
 	cout << "Enter Student Number (range 1 - 9999): " << endl;
 	cin >> ID;
+
+	StudentName* tempName = new StudentName;
+	StudentLastName *tempLastName = new StudentLastName;
+	StudentID *tempID = new StudentID;
+
+	tempName->dataName = name;
+	tempLastName->dataLast = lastName;
+	tempID->dataID = ID;
+	tempName->next = startName;
+	tempLastName->next = startLast;
+	tempID->next = startID;
+
+	startName = tempName;
+	startLast = tempLastName;
+	startID = tempID;
+	//Keep the total of students
+	studentCount++;
 
 	// search en el file que ya el nombre y/o num del estudiante no exista
 

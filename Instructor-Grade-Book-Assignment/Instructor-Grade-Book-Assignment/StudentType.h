@@ -6,19 +6,19 @@ using namespace std;
 
 struct StudentName
 {
-	string studentName;
+	string dataName;
 	StudentName *next;
 };
 
 struct StudentLastName
 {
-	string studentLastName;
+	string dataLast;
 	StudentLastName *next;
 };
 
 struct StudentID
 {
-	string studentID;
+	string dataID;
 	StudentID *next;
 };
 
@@ -29,12 +29,12 @@ public:
 	StudentType();
 	~StudentType();
 
-	string GetStatus() const;
-	void Initialize(string, string, int, string);
+//	string GetStatus() const;
+//	void Initialize(string, string, int, string);
 	void PersoneType(string, string, int);
 
 	bool IsFull() const;
-	int GetLength() const;
+	int GetNumStudent() const;
 	void readFile();
 	void setStudent(); //Inster Student
 	void deleteStudent(); //Deletes Student
@@ -54,7 +54,9 @@ private:
 //	int totalProgramPercent;
 //	int totalExamPercent;
 //	int finalExamPercent;
-
+	StudentName *startName;
+	StudentLastName* startLast;
+	StudentID* startID;
 
 };
 
