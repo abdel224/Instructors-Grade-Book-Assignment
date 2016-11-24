@@ -4,6 +4,24 @@
 #include "semester.h"
 using namespace std;
 
+struct StudentName
+{
+	string studentName;
+	StudentName *next;
+};
+
+struct StudentLastName
+{
+	string studentLastName;
+	StudentLastName *next;
+};
+
+struct StudentID
+{
+	string studentID;
+	StudentID *next;
+};
+
 
 class StudentType
 {
@@ -15,29 +33,27 @@ public:
 	void Initialize(string, string, int, string);
 	void PersoneType(string, string, int);
 
+	bool IsFull() const;
+	int GetLength() const;
 	void readFile();
-	void pritnToFile();
-	void setStudent();
+	void setStudent(); //Inster Student
+	void deleteStudent(); //Deletes Student
 	void setGrade();
 	void CalculateFinalGrade();
-	
+	void pritnToFile(); //Show
 
 
 
 private:
 	
-	int number;
-	int studentCount = 0;
+	int ID;
+	int studentCount; //length
 	string status;
 	string name;
 	string lastName;
-	int totalProgramPercent;
-	int totalExamPercent;
-	int finalExamPercent;
-
-	int numPrograms = 0;
-	int numExams = 0;
-	int numFinalExam = 0;
+//	int totalProgramPercent;
+//	int totalExamPercent;
+//	int finalExamPercent;
 
 
 };

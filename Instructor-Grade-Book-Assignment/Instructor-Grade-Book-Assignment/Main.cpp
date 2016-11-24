@@ -12,6 +12,7 @@ int main() {
 	mainMenu menu;
 	semester semesterSet;
 	ofstream logFile;
+	StudentType addStudent;
 	char answer = ' ';
 
 	do {
@@ -54,7 +55,6 @@ int main() {
 			{
 				cout << "Add student.";
 				cout << endl;
-				StudentType addStudent;
 				addStudent.setStudent();
 				system("pause");
 				system("cls");
