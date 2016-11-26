@@ -10,7 +10,6 @@ using namespace std;
 int main() {
 	mainMenu menu;
 	semester semesterSet;
-	ofstream logFile;
 	char answer = ' ';
 
 	do {
