@@ -4,12 +4,15 @@
 #include <iomanip>
 #include "mainMenu.h"
 #include "semester.h"
+#include "StudentType.h"
 
 using namespace std;
 
 int main() {
 	mainMenu menu;
 	semester semesterSet;
+	ofstream logFile;
+	StudentType addStudent;
 	char answer = ' ';
 
 	do {
@@ -52,8 +55,10 @@ int main() {
 			{
 				cout << "Add student.";
 				cout << endl;
+				addStudent.setStudent();
 				system("pause");
 				system("cls");
+
 			}
 	
 		}
@@ -172,5 +177,6 @@ int main() {
 
 	} while (toupper(answer) != 'Q');
 
+	
 	return 0;
 }
