@@ -36,10 +36,7 @@ int StudentType::GetNumStudent() const
 
 void StudentType::readFile()
 {
-	string usr;
-	out.open("grades.txt");
-	usr = "Prueba";
-	out << usr;
+	
 }
 
 void StudentType::pritnToFile()
@@ -51,11 +48,6 @@ void StudentType::pritnToFile()
 
 	out.open("grades.txt");
 
-	usr = tempName->dataName + " " + tempLast->dataLast + " " + tempID->dataID;
-	out << usr << endl;
-	tempName = tempName->next;
-	tempLast = tempLast->next;
-	tempID = tempID->next;
 
 /*	while (tempName != NULL && tempLast != NULL && tempID != NULL)
 	{
@@ -65,6 +57,8 @@ void StudentType::pritnToFile()
 		tempLast = tempLast->next;
 		tempID = tempID->next;
 	}*/
+
+	out.close();
 }
 
 void StudentType::setStudent()
