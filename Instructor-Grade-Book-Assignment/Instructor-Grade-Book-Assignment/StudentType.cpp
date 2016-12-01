@@ -1,6 +1,7 @@
 #include "StudentType.h"
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 
@@ -35,21 +36,35 @@ int StudentType::GetNumStudent() const
 
 void StudentType::readFile()
 {
+	string usr;
+	out.open("grades.txt");
+	usr = "Prueba";
+	out << usr;
 }
 
 void StudentType::pritnToFile()
 {
+	string usr;
 	StudentName* tempName = startName;
 	StudentLastName* tempLast = startLast;
 	StudentID* tempID = startID;
 
-	while (tempName != NULL && tempLast != NULL && tempID != NULL)
+	out.open("grades.txt");
+
+	usr = tempName->dataName + " " + tempLast->dataLast + " " + tempID->dataID;
+	out << usr << endl;
+	tempName = tempName->next;
+	tempLast = tempLast->next;
+	tempID = tempID->next;
+
+/*	while (tempName != NULL && tempLast != NULL && tempID != NULL)
 	{
-		cout << tempName->dataName << " " << tempLast->dataLast << " " << tempID->dataID << " " << endl;
+		usr = tempName->dataName + " " + tempLast->dataLast + " " + tempID->dataID;
+	    out << usr << endl;
 		tempName = tempName->next;
 		tempLast = tempLast->next;
 		tempID = tempID->next;
-	}
+	}*/
 }
 
 void StudentType::setStudent()
@@ -75,8 +90,9 @@ void StudentType::setStudent()
 	startName = tempName;
 	startLast = tempLastName;
 	startID = tempID;
-	//Keep the total of students
+	//Keep track of the total of students
 	studentCount++;
+	pritnToFile();
 
 	// search en el file que ya el nombre y/o num del estudiante no exista
 

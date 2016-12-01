@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include "semester.h"
+#include <fstream>
+#include "fileManger.h"
 using namespace std;
 
 struct StudentName
@@ -57,7 +59,9 @@ private:
 	StudentName *startName;
 	StudentLastName* startLast;
 	StudentID* startID;
-
+	ifstream file;
+	ofstream out;
+	
 };
 
 

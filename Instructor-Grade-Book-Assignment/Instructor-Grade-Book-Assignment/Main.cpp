@@ -44,7 +44,7 @@ int main() {
 		}
 		else if (toupper(answer) == 'A')
 		{
-			if (semesterSet.fileExists() == false)
+/*			if (semesterSet.fileExists() == false)
 			{
 				cout << "Semester isn't set yet do this First!" << endl;
 				system("pause");
@@ -52,14 +52,14 @@ int main() {
 				main();
 			}
 			else
-			{
+			{*/
 				cout << "Add student.";
 				cout << endl;
 				addStudent.setStudent();
 				system("pause");
 				system("cls");
 
-			}
+//			}
 	
 		}
 		else if (toupper(answer) == 'P')
